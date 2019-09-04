@@ -5,13 +5,7 @@ jobs:
     - stage: test
       script: env
     - stage: deploy
-#      if: "tag =~ ^v([[:digit:]]+\\.)+[[:digit:]]+(-[[:digit:]]+)?(-SNAPSHOT)?$"
+      if: "tag =~ ^v([[:digit:]]+\\.)+[[:digit:]]+(-[[:digit:]]+)?(-SNAPSHOT)?$"
       env:
         - secure: "b7l6mR+hk1S+5jYJyTu8VG9cclSjrdSIswAbIQ3E7Ca4L22/BdHIwQx6vC7IADGgPTnp67b9aFR0OvS/kWJ0VD9V3m1UaI7peSggFSbs7f29PF2GQyBXkeAFXZLbWEi6PoR+bucJpF7UMe0kxs5AE4b9XOFTeu9jUN0HIl5zmXWEfKodZ42WK6U2zBP01hFxaN2fUnyiZBegUfJ6Z9cmFT+wC4vaxPNpRGzV4N9W67LRcuw7qVBClI28FkUagZHkg49bjQ5lwwSdqGH4fNUYmoFbb7WreSBiLIm6TzgZWcoUWZeE4vN3toOWu7DRmx1i0Ip5vtDk0GPy3fmyDeN8PBsaTRCBi5nvoNURD+RzUfi3BQg3VLOeB7IxegglLrI9MJyTNJRnVFv8F/YbzNSvWUTF+cmwyY8n3MuGhD6HiCnQX9QHmVM6r1+nT5kdC9DshNrncl5Q29EZ/XZhgoqB9kDwcLMsZ9chixmqZZZ/XREeiXrCu3D1CmU4osuylFlgu4lIcXk6LmWpHEPQznuH7Dunin0X6rqlujZwNT3Nj2GnEkoLR2ax9GOndEdHxkpoHMtYqfxlstofkB86ImlhCzOWBJoJyzwAVWYFBaHP6aW3Oyh30HnvF/lNuHkoVY6ypoObBwTr3mt7VV9GHtywjzqmR/0mi9l3iLa04kdaDas="
-      deploy:
-        - provider: script
-          skip_cleanup: true
-          script: /bin/bash -c "env"
-          on:
-            all_branches: true
-            tags: true
+      script: echo "start deployment"
